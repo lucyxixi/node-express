@@ -10,6 +10,10 @@ const port = 3000;
 
 const app = express();
 
+const dishRouter = require('./routes/dishRouter');
+
+app.use('/dishes', dishRouter);
+
 app.use((req, res, next) => {
   console.log(req.headers);
   res.statusCode = 200;
